@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input placeholder="title" type="text" id="title">
+        <input placeholder="description" type="text" id="description">
+        <button id="button-1">add todo</button>
+
+    </div>
+    <div id="container"></div>
+
+    <script>
+        const state=[{
+            title:"bhai",
+            desc:"description"
+        }]
+        const button1=document.getElementById("button-1");
+        button1.addEventListener("click",()=>{
+            const title=document.getElementById("title").value;
+            const desc=document.getElementById("description").value;
+
+            const divElement=document.createElement("div");
+            const button2=document.createElement("button");
+            button2.textContent="mark done!";
+            button2.classList.add("button-2");
+            
+            divElement.innerHTML=`TITLE: ${title}
+            DESCRIPTION: ${desc}
+            `
+            document.getElementById("container").appendChild(divElement);
+            button2.addEventListener("click",()=>{
+                button2.textContent="already done!"
+            })
+            divElement.appendChild(button2);
+
+
+        })
+        const updatedState=(state)=>{
+            for(let i=0;state.length;i++){
+                
+            }
+        }
+        
+    </script>
+</body>
+</html>
